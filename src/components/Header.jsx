@@ -1,5 +1,5 @@
 import React from "react";
-
+// Header component displays the application title and logo
 function Header() {
   return (
     <header>

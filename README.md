@@ -91,3 +91,24 @@ Example Response:
   "price": 15.99
 }
 ```
+
+===========
+  UPDATES
+===========
+**Files Affected**
+- PlantPage.jsx:
+
+Added a GET request to retrieve data from server upon mount. Created new state variables 
+for plant data and search. Added function for displaying a filtered list after plant search. Added function to handle adding a new plant. passed new props to html elements.
+
+- PlantList.jsx:
+
+Passed plant data as prop and map method to filter through plant data.
+
+- PlantCard.jsx:
+
+Passed mapped array as a prop to PlantCard function. Added state variable to inStock status. Added toggle function for marking item as outOfStock. Event listener attached to button for handle toggle. props data added as props for display.
+
+- NewPlantForm.jsx:
+
+Passed onAddPlant function as a prop to NewPlantForm function. Created new state variables for form inputs. Added handle submit function and form submission logic. Added fetch POST logic to store new plant data in the server. attached onChange event listeners to form inputs to update UI with new data after form submission.

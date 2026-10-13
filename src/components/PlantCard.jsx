@@ -1,15 +1,25 @@
 import React from "react";
+import { useState } from "react";
+// PlantCard component displays individual plant information and allows users to toggle stock status
+function PlantCard({ plant }) {
+  // State variable to manage stock status
+  const [inStock, setInStock] = useState(true);
+  // Function to toggle stock status when the button is clicked
+  const handleStockToggle = () => {
+    setInStock((prevInStock) => !prevInStock);
+  };
 
-function PlantCard() {
   return (
     <li className="card" data-testid="plant-item">
-      <img src={"https://via.placeholder.com/400"} alt={"plant name"} />
-      <h4>{"plant name"}</h4>
-      <p>Price: {"plant price"}</p>
-      {true ? (
-        <button className="primary">In Stock</button>
+      <img src={plant.image} alt={plant.name} />
+      <h4>{plant.name}</h4>
+      <p>Price: {Number(plant.price).toString()}</p>
+      {inStock ? (
+        <button className="primary" onClick={handleStockToggle}>
+          In Stock
+        </button>
       ) : (
-        <button>Out of Stock</button>
+        <button onClick={handleStockToggle}>Out of Stock</button>
       )}
     </li>
   );
